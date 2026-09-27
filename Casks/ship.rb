@@ -1,9 +1,9 @@
 cask "ship" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.2.0"
-  sha256 arm:   "dd102a841728c81ec8fad85285dbd4e650d7d23c44565bc775dcfe1041250ca6",
-         intel: "27a075b0de9f2451f0b7a680109742a1d69005ac711c71d371b93e468a6cb52e"
+  version "0.2.1"
+  sha256 arm:   "1924ee2cf7d47c256af04b329470949b0b20a22b1e25db1d9dba61c35b9d0c83",
+         intel: "b743acfdc92cfe76c3d8b9c38eeae535d3e5489a0ab6d0eb78d4f52a46aaf810"
 
   url "https://github.com/semenov/ship/releases/download/v#{version}/ship_darwin_#{arch}.tar.gz"
   name "ship"
