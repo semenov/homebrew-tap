@@ -13,7 +13,7 @@ cask "ship" do
   binary "ship"
 
   # the binary is not notarized; allow it to run without a Gatekeeper prompt
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/ship"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/ship"], must_succeed: false
   end
 end
