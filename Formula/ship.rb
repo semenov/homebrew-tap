@@ -1,17 +1,33 @@
 class Ship < Formula
   desc "Deploy web apps to your own server with one command"
   homepage "https://github.com/semenov/ship"
-  url "https://github.com/semenov/ship/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "c482fa89b969de4011bcf09404c55e6c76fea004dde65826f8b86e0baa52218c"
+  version "0.1.0"
   license "MIT"
-  head "https://github.com/semenov/ship.git", branch: "main"
 
-  depends_on "go" => :build
+  base = "https://github.com/semenov/ship/releases/download/v#{version}"
+  on_macos do
+    on_arm do
+      url "#{base}/ship_#{version}_darwin_arm64.tar.gz"
+      sha256 "8aae915b898197afa352a64baa8f1ba166bee2aeaa6a47a96e3be782e4407628"
+    end
+    on_intel do
+      url "#{base}/ship_#{version}_darwin_amd64.tar.gz"
+      sha256 "12e023986c4fdded7badf3a6ef8dd3e967723ae33830ac46aff1d19bf9162bd5"
+    end
+  end
+  on_linux do
+    on_arm do
+      url "#{base}/ship_#{version}_linux_arm64.tar.gz"
+      sha256 "6bda40dd7b113c0eccd6350daeb8aa7af9a19a562e60c03b03469d9f152f921e"
+    end
+    on_intel do
+      url "#{base}/ship_#{version}_linux_amd64.tar.gz"
+      sha256 "0d758e50e3059bdd78dc3094fdc12461c07307c7de4bf4d330c6cc56a543028d"
+    end
+  end
 
   def install
-    # builds the linux shipd helpers first, then embeds them into ship
-    system "make", "build", "VERSION=#{version}"
-    bin.install "dist/ship"
+    bin.install "ship"
   end
 
   test do
