@@ -1,9 +1,9 @@
 cask "homebase" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.6.0"
-  sha256 arm:   "d182600093f5a74c3796d12ca5d525177bc992dbf213c9fa6cabe65ad24d2ea4",
-         intel: "556d48d9a9db838be2ed65b4be64e41abefb42a09c4f26c9095c81ebb1de6f1b"
+  version "0.6.1"
+  sha256 arm:   "510bf1ff4a3a3490518473f2196bc73794d22384706a08eaa0f9f0242ab5af5b",
+         intel: "cac2e32d50531436c5f0fa0d90e9cdfc705e9431a36a81a8f7589861d05b6352"
 
   url "https://github.com/semenov/homebase/releases/download/v#{version}/homebase_darwin_#{arch}.tar.gz"
   name "homebase"
