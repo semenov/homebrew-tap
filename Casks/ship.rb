@@ -10,6 +10,8 @@ cask "ship" do
   desc "Deploy web apps to your own server with one command"
   homepage "https://github.com/semenov/ship"
 
+  deprecate! date: "2026-10-08", because: "is now part of homebase (`brew install semenov/tap/homebase`, then `homebase deploy`)"
+
   binary "ship"
 
   # the binary is not notarized; allow it to run without a Gatekeeper prompt
