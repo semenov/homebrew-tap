@@ -1,13 +1,13 @@
 cask "homebase" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.6.1"
-  sha256 arm:   "510bf1ff4a3a3490518473f2196bc73794d22384706a08eaa0f9f0242ab5af5b",
-         intel: "cac2e32d50531436c5f0fa0d90e9cdfc705e9431a36a81a8f7589861d05b6352"
+  version "0.7.0"
+  sha256 arm:   "d25be97044a4121f03a01214d7e885b8512235da4d47557008c76b14e96475d8",
+         intel: "be2a44c97dc2423d273119e8e3d3d5b76fb76952610d2e64c652dee970d8b33b"
 
   url "https://github.com/semenov/homebase/releases/download/v#{version}/homebase_darwin_#{arch}.tar.gz"
   name "homebase"
-  desc "Run local dev servers as launchd agents, reachable at <name>.localhost"
+  desc "Dev servers on your Mac and deploys to your own server, with real URLs"
   homepage "https://github.com/semenov/homebase"
 
   binary "homebase"
